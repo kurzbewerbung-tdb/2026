@@ -1,4 +1,5 @@
-const CACHE = "tag-des-berufs-v11";
+
+const CACHE = "tag-des-berufs-v12";
 
 const ASSETS = [
   "./",
@@ -19,9 +20,7 @@ self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys().then(keys =>
       Promise.all(
-        keys
-          .filter(key => key !== CACHE)
-          .map(key => caches.delete(key))
+        keys.filter(key => key !== CACHE).map(key => caches.delete(key))
       )
     )
   );
